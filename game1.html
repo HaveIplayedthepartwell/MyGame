@@ -1,0 +1,29 @@
+function Game(){
+	this.confirm;
+	this.answer;
+
+	confirm = confirm("Do you want to play a game");
+	while(confirm)
+	{
+		answer = prompt("What month I was born, 1 being January and 12 being december?")
+		if(answer===12)
+		{
+			console.log("Congrats you're a genius")
+			confirm = false;
+		}
+		else{
+			console.log("Oh, sorry, you were wrong")
+			confirm = confirm("Do you want to play another time?");
+		}
+
+	}
+	console.log("Thanks for playing");
+
+
+
+
+
+
+
+
+}

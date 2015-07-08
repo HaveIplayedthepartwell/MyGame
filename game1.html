@@ -1,27 +1,45 @@
-<script>
+<!DOCTYPE html>
+<html>
+	<head><title>Guess when I was born</title></head>
+	<body>
+		<img id="faceImage" src="" />
 
-function Game(){
-	this.confirm;
-	this.answer;
 
-	this.confirm = confirm("Do you want to play a game");
-	while(this.confirm)
-	{
-		this.answer = prompt("What month I was born, 1 being January and 12 being december?")
-		if(this.answer==12)
+	<script>
+	function Game(){
+		this.confirm;
+		this.answer;
+		this.imageNode;
+		this.message;
+
+		this.displayMessage = function() {
+			alert(this.message);
+		}
+
+		this.confirm = confirm("Do you want to play a game");
+		while(this.confirm)
 		{
-			console.log("Congrats you're a genius")
-			this.confirm = false;
-		}
-		else{
-			console.log("Oh, sorry, you were wrong")
-			this.confirm = confirm("Do you want to play another time?");
-		}
+			this.answer = prompt("What month I was born, 1 being January and 12 being december?")
+			if(this.answer==10) {
+				this.message = "Congrats you're a genius!";
+				this.displayMessage();
+				this.imageNode = document.getElementById("faceImage");
+				this.imageNode.setAttribute("src","http://img1.wikia.nocookie.net/__cb20120412051836/suburgatory/images/5/52/Happy_face.jpg");
+				this.confirm = false;
+			} else{
+				this.message = "Oh sorry, you were wrong!";
+				this.displayMessage();
+				this.imageNode = document.getElementById("faceImage");
+				this.imageNode.setAttribute("src","http://www.geographicresearch.com/wp-content/uploads/2011/12/sad-face.jpg");
+				this.confirm = confirm("Do you want to play another time?");
+			}
 
+		}
+		console.log("Thanks for playing");
 	}
-	console.log("Thanks for playing");
-}
 
-var newGame = new Game();
+	var newGame = new Game();
 
-</script>
+	</script>
+	</body>
+</html>

@@ -1,29 +1,27 @@
+<script>
+
 function Game(){
 	this.confirm;
 	this.answer;
 
-	confirm = confirm("Do you want to play a game");
-	while(confirm)
+	this.confirm = confirm("Do you want to play a game");
+	while(this.confirm)
 	{
-		answer = prompt("What month I was born, 1 being January and 12 being december?")
-		if(answer===12)
+		this.answer = prompt("What month I was born, 1 being January and 12 being december?")
+		if(this.answer==12)
 		{
 			console.log("Congrats you're a genius")
-			confirm = false;
+			this.confirm = false;
 		}
 		else{
 			console.log("Oh, sorry, you were wrong")
-			confirm = confirm("Do you want to play another time?");
+			this.confirm = confirm("Do you want to play another time?");
 		}
 
 	}
 	console.log("Thanks for playing");
-
-
-
-
-
-
-
-
 }
+
+var newGame = new Game();
+
+</script>
